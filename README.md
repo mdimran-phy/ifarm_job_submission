@@ -5,8 +5,8 @@ This repository provides scripts and instructions for running simulation and rec
 Running on JLab IFarm
 
 If you are running jobs on JLab IFarm, you do not need to install any additional software on your PC. Instead, ensure you have properly sourced the environment. Follow the installation instructions for eicdirc (https://github.com/rdom/eicdirc).
-Running Locally
 
+Running Locally
 If you wish to run the code on your local PC, you need to install the following software:
 
     Geant4
