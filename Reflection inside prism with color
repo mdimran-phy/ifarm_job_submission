@@ -1,0 +1,401 @@
+
+
+import ROOT
+
+# Upload File
+file = ROOT.TFile("sim_c2031_mix_30.root")
+dataTree = file.Get("data")
+
+# Create/Divide Canvas
+c = ROOT.TCanvas("c", "Canvas", 1200, 500)
+c.Divide(2, 1)
+
+# Start Filling hp
+c.cd(1)
+
+# Define colors for hp
+dataTree.SetMarkerColor(ROOT.kBlack)
+dataTree.Draw("PrtEvent.fHitArray.fPosition.Px():PrtEvent.fHitArray.fPosition.Py()","PrtEvent.fHitArray.fPathInPrizm == 0", "")
+c.Update()
+
+dataTree.SetMarkerColor(ROOT.kMagenta)
+dataTree.Draw("PrtEvent.fHitArray.fPosition.Px():PrtEvent.fHitArray.fPosition.Py()","PrtEvent.fHitArray.fPathInPrizm == 3", "same")
+c.Update()
+    
+dataTree.SetMarkerColor(ROOT.kPink + 1)
+dataTree.Draw("PrtEvent.fHitArray.fPosition.Px():PrtEvent.fHitArray.fPosition.Py()","PrtEvent.fHitArray.fPathInPrizm == 4", "same")
+c.Update()
+
+dataTree.SetMarkerColor(ROOT.kRed + 1)
+dataTree.Draw("PrtEvent.fHitArray.fPosition.Px():PrtEvent.fHitArray.fPosition.Py()","PrtEvent.fHitArray.fPathInPrizm == 31 || PrtEvent.fHitArray.fPathInPrizm == 32", "same")
+c.Update()
+
+dataTree.SetMarkerColor(ROOT.kBlue + 1)
+dataTree.Draw("PrtEvent.fHitArray.fPosition.Px():PrtEvent.fHitArray.fPosition.Py()","PrtEvent.fHitArray.fPathInPrizm == 1 || PrtEvent.fHitArray.fPathInPrizm == 2", "same")
+c.Update()
+ 
+dataTree.SetMarkerColor(ROOT.kGray + 1)   
+dataTree.Draw("PrtEvent.fHitArray.fPosition.Px():PrtEvent.fHitArray.fPosition.Py()", \
+              "PrtEvent.fHitArray.fPathInPrizm == 11 || \
+               PrtEvent.fHitArray.fPathInPrizm == 12 || \
+               PrtEvent.fHitArray.fPathInPrizm == 13 || \
+               PrtEvent.fHitArray.fPathInPrizm == 14 || \
+               PrtEvent.fHitArray.fPathInPrizm == 21 || \
+               PrtEvent.fHitArray.fPathInPrizm == 22 || \
+               PrtEvent.fHitArray.fPathInPrizm == 23 || \
+               PrtEvent.fHitArray.fPathInPrizm == 24 || \
+               PrtEvent.fHitArray.fPathInPrizm == 41 || \
+               PrtEvent.fHitArray.fPathInPrizm == 42 || \
+               PrtEvent.fHitArray.fPathInPrizm == 43 || \
+               PrtEvent.fHitArray.fPathInPrizm == 44", "same")
+c.Update()
+
+dataTree.SetMarkerColorAlpha(ROOT.kGreen + 3, 1)
+dataTree.Draw("PrtEvent.fHitArray.fPosition.Px():PrtEvent.fHitArray.fPosition.Py()", \
+              "PrtEvent.fHitArray.fPathInPrizm == 111 || \
+               PrtEvent.fHitArray.fPathInPrizm == 112 || \
+               PrtEvent.fHitArray.fPathInPrizm == 113 || \
+               PrtEvent.fHitArray.fPathInPrizm == 114 || \
+               PrtEvent.fHitArray.fPathInPrizm == 121 || \
+               PrtEvent.fHitArray.fPathInPrizm == 122 || \
+               PrtEvent.fHitArray.fPathInPrizm == 123 || \
+               PrtEvent.fHitArray.fPathInPrizm == 124 || \
+               PrtEvent.fHitArray.fPathInPrizm == 131 || \
+               PrtEvent.fHitArray.fPathInPrizm == 132 || \
+               PrtEvent.fHitArray.fPathInPrizm == 133 || \
+               PrtEvent.fHitArray.fPathInPrizm == 134 || \
+               PrtEvent.fHitArray.fPathInPrizm == 141 || \
+               PrtEvent.fHitArray.fPathInPrizm == 142 || \
+               PrtEvent.fHitArray.fPathInPrizm == 143 || \
+               PrtEvent.fHitArray.fPathInPrizm == 144 || \
+               PrtEvent.fHitArray.fPathInPrizm == 211 || \
+               PrtEvent.fHitArray.fPathInPrizm == 212 || \
+               PrtEvent.fHitArray.fPathInPrizm == 213 || \
+               PrtEvent.fHitArray.fPathInPrizm == 214 || \
+               PrtEvent.fHitArray.fPathInPrizm == 221 || \
+               PrtEvent.fHitArray.fPathInPrizm == 222 || \
+               PrtEvent.fHitArray.fPathInPrizm == 223 || \
+               PrtEvent.fHitArray.fPathInPrizm == 224 || \
+               PrtEvent.fHitArray.fPathInPrizm == 231 || \
+               PrtEvent.fHitArray.fPathInPrizm == 232 || \
+               PrtEvent.fHitArray.fPathInPrizm == 233 || \
+               PrtEvent.fHitArray.fPathInPrizm == 234 || \
+               PrtEvent.fHitArray.fPathInPrizm == 241 || \
+               PrtEvent.fHitArray.fPathInPrizm == 242 || \
+               PrtEvent.fHitArray.fPathInPrizm == 243 || \
+               PrtEvent.fHitArray.fPathInPrizm == 244 || \
+               PrtEvent.fHitArray.fPathInPrizm == 311 || \
+               PrtEvent.fHitArray.fPathInPrizm == 312 || \
+               PrtEvent.fHitArray.fPathInPrizm == 313 || \
+               PrtEvent.fHitArray.fPathInPrizm == 314 || \
+               PrtEvent.fHitArray.fPathInPrizm == 321 || \
+               PrtEvent.fHitArray.fPathInPrizm == 322 || \
+               PrtEvent.fHitArray.fPathInPrizm == 323 || \
+               PrtEvent.fHitArray.fPathInPrizm == 324 || \
+               PrtEvent.fHitArray.fPathInPrizm == 331 || \
+               PrtEvent.fHitArray.fPathInPrizm == 332 || \
+               PrtEvent.fHitArray.fPathInPrizm == 333 || \
+               PrtEvent.fHitArray.fPathInPrizm == 334 || \
+               PrtEvent.fHitArray.fPathInPrizm == 341 || \
+               PrtEvent.fHitArray.fPathInPrizm == 342 || \
+               PrtEvent.fHitArray.fPathInPrizm == 343 || \
+               PrtEvent.fHitArray.fPathInPrizm == 344 || \
+               PrtEvent.fHitArray.fPathInPrizm == 411 || \
+               PrtEvent.fHitArray.fPathInPrizm == 412 || \
+               PrtEvent.fHitArray.fPathInPrizm == 413 || \
+               PrtEvent.fHitArray.fPathInPrizm == 414 || \
+               PrtEvent.fHitArray.fPathInPrizm == 421 || \
+               PrtEvent.fHitArray.fPathInPrizm == 422 || \
+               PrtEvent.fHitArray.fPathInPrizm == 423 || \
+               PrtEvent.fHitArray.fPathInPrizm == 424 || \
+               PrtEvent.fHitArray.fPathInPrizm == 431 || \
+               PrtEvent.fHitArray.fPathInPrizm == 432 || \
+               PrtEvent.fHitArray.fPathInPrizm == 433 || \
+               PrtEvent.fHitArray.fPathInPrizm == 434 || \
+               PrtEvent.fHitArray.fPathInPrizm == 441 || \
+               PrtEvent.fHitArray.fPathInPrizm == 442 || \
+               PrtEvent.fHitArray.fPathInPrizm == 443 || \
+               PrtEvent.fHitArray.fPathInPrizm == 444", "same")
+c.Update()
+
+dataTree.SetMarkerColorAlpha(ROOT.kYellow - 3, 0.5)
+dataTree.Draw("PrtEvent.fHitArray.fPosition.Px():PrtEvent.fHitArray.fPosition.Py()", \
+              "!(PrtEvent.fHitArray.fPathInPrizm == 0 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 3 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 4 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 11 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 12 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 13 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 14 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 21 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 22 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 23 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 24 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 41 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 42 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 43 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 44 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 31 || PrtEvent.fHitArray.fPathInPrizm == 32 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 1 || PrtEvent.fHitArray.fPathInPrizm == 2 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 111 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 112 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 113 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 114 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 121 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 122 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 123 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 124 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 131 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 132 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 133 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 134 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 141 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 142 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 143 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 144 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 211 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 212 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 213 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 214 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 221 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 222 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 223 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 224 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 231 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 232 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 233 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 234 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 241 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 242 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 243 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 244 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 311 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 312 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 313 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 314 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 321 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 322 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 323 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 324 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 331 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 332 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 333 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 334 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 341 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 342 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 343 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 344 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 411 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 412 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 413 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 414 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 421 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 422 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 423 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 424 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 431 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 432 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 433 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 434 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 441 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 442 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 443 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 444)", "same")
+c.Update()
+    
+# Start Filling Time
+c.cd(2)
+
+# Define Colors for Time
+
+dataTree.SetLineColor(ROOT.kBlack)
+dataTree.Draw("PrtEvent.fHitArray.fLeadTime","PrtEvent.fHitArray.fPathInPrizm == 0", "")
+c.Update()
+
+dataTree.SetLineColor(ROOT.kMagenta)
+dataTree.Draw("PrtEvent.fHitArray.fLeadTime","PrtEvent.fHitArray.fPathInPrizm == 3", "same")
+c.Update()
+    
+dataTree.SetLineColor(ROOT.kPink + 2)
+dataTree.Draw("PrtEvent.fHitArray.fLeadTime","PrtEvent.fHitArray.fPathInPrizm == 4", "same")
+c.Update()
+
+dataTree.SetLineColor(ROOT.kRed + 1)
+dataTree.Draw("PrtEvent.fHitArray.fLeadTime","PrtEvent.fHitArray.fPathInPrizm == 31 || PrtEvent.fHitArray.fPathInPrizm == 32", "same")
+c.Update()
+
+dataTree.SetLineColor(ROOT.kBlue + 1)
+dataTree.Draw("PrtEvent.fHitArray.fLeadTime","PrtEvent.fHitArray.fPathInPrizm == 1 || PrtEvent.fHitArray.fPathInPrizm == 2", "same")
+c.Update()
+
+dataTree.SetLineColor(ROOT.kGray + 1)    
+dataTree.Draw("PrtEvent.fHitArray.fLeadTime", \
+              "PrtEvent.fHitArray.fPathInPrizm == 11 || \
+               PrtEvent.fHitArray.fPathInPrizm == 12 || \
+               PrtEvent.fHitArray.fPathInPrizm == 13 || \
+               PrtEvent.fHitArray.fPathInPrizm == 14 || \
+               PrtEvent.fHitArray.fPathInPrizm == 21 || \
+               PrtEvent.fHitArray.fPathInPrizm == 22 || \
+               PrtEvent.fHitArray.fPathInPrizm == 23 || \
+               PrtEvent.fHitArray.fPathInPrizm == 24 || \
+               PrtEvent.fHitArray.fPathInPrizm == 41 || \
+               PrtEvent.fHitArray.fPathInPrizm == 42 || \
+               PrtEvent.fHitArray.fPathInPrizm == 43 || \
+               PrtEvent.fHitArray.fPathInPrizm == 44", "same")
+c.Update()
+
+dataTree.SetLineColor(ROOT.kGreen + 3)
+dataTree.Draw("PrtEvent.fHitArray.fLeadTime", \
+              "PrtEvent.fHitArray.fPathInPrizm == 111 || \
+               PrtEvent.fHitArray.fPathInPrizm == 112 || \
+               PrtEvent.fHitArray.fPathInPrizm == 113 || \
+               PrtEvent.fHitArray.fPathInPrizm == 114 || \
+               PrtEvent.fHitArray.fPathInPrizm == 121 || \
+               PrtEvent.fHitArray.fPathInPrizm == 122 || \
+               PrtEvent.fHitArray.fPathInPrizm == 123 || \
+               PrtEvent.fHitArray.fPathInPrizm == 124 || \
+               PrtEvent.fHitArray.fPathInPrizm == 131 || \
+               PrtEvent.fHitArray.fPathInPrizm == 132 || \
+               PrtEvent.fHitArray.fPathInPrizm == 133 || \
+               PrtEvent.fHitArray.fPathInPrizm == 134 || \
+               PrtEvent.fHitArray.fPathInPrizm == 141 || \
+               PrtEvent.fHitArray.fPathInPrizm == 142 || \
+               PrtEvent.fHitArray.fPathInPrizm == 143 || \
+               PrtEvent.fHitArray.fPathInPrizm == 144 || \
+               PrtEvent.fHitArray.fPathInPrizm == 211 || \
+               PrtEvent.fHitArray.fPathInPrizm == 212 || \
+               PrtEvent.fHitArray.fPathInPrizm == 213 || \
+               PrtEvent.fHitArray.fPathInPrizm == 214 || \
+               PrtEvent.fHitArray.fPathInPrizm == 221 || \
+               PrtEvent.fHitArray.fPathInPrizm == 222 || \
+               PrtEvent.fHitArray.fPathInPrizm == 223 || \
+               PrtEvent.fHitArray.fPathInPrizm == 224 || \
+               PrtEvent.fHitArray.fPathInPrizm == 231 || \
+               PrtEvent.fHitArray.fPathInPrizm == 232 || \
+               PrtEvent.fHitArray.fPathInPrizm == 233 || \
+               PrtEvent.fHitArray.fPathInPrizm == 234 || \
+               PrtEvent.fHitArray.fPathInPrizm == 241 || \
+               PrtEvent.fHitArray.fPathInPrizm == 242 || \
+               PrtEvent.fHitArray.fPathInPrizm == 243 || \
+               PrtEvent.fHitArray.fPathInPrizm == 244 || \
+               PrtEvent.fHitArray.fPathInPrizm == 311 || \
+               PrtEvent.fHitArray.fPathInPrizm == 312 || \
+               PrtEvent.fHitArray.fPathInPrizm == 313 || \
+               PrtEvent.fHitArray.fPathInPrizm == 314 || \
+               PrtEvent.fHitArray.fPathInPrizm == 321 || \
+               PrtEvent.fHitArray.fPathInPrizm == 322 || \
+               PrtEvent.fHitArray.fPathInPrizm == 323 || \
+               PrtEvent.fHitArray.fPathInPrizm == 324 || \
+               PrtEvent.fHitArray.fPathInPrizm == 331 || \
+               PrtEvent.fHitArray.fPathInPrizm == 332 || \
+               PrtEvent.fHitArray.fPathInPrizm == 333 || \
+               PrtEvent.fHitArray.fPathInPrizm == 334 || \
+               PrtEvent.fHitArray.fPathInPrizm == 341 || \
+               PrtEvent.fHitArray.fPathInPrizm == 342 || \
+               PrtEvent.fHitArray.fPathInPrizm == 343 || \
+               PrtEvent.fHitArray.fPathInPrizm == 344 || \
+               PrtEvent.fHitArray.fPathInPrizm == 411 || \
+               PrtEvent.fHitArray.fPathInPrizm == 412 || \
+               PrtEvent.fHitArray.fPathInPrizm == 413 || \
+               PrtEvent.fHitArray.fPathInPrizm == 414 || \
+               PrtEvent.fHitArray.fPathInPrizm == 421 || \
+               PrtEvent.fHitArray.fPathInPrizm == 422 || \
+               PrtEvent.fHitArray.fPathInPrizm == 423 || \
+               PrtEvent.fHitArray.fPathInPrizm == 424 || \
+               PrtEvent.fHitArray.fPathInPrizm == 431 || \
+               PrtEvent.fHitArray.fPathInPrizm == 432 || \
+               PrtEvent.fHitArray.fPathInPrizm == 433 || \
+               PrtEvent.fHitArray.fPathInPrizm == 434 || \
+               PrtEvent.fHitArray.fPathInPrizm == 441 || \
+               PrtEvent.fHitArray.fPathInPrizm == 442 || \
+               PrtEvent.fHitArray.fPathInPrizm == 443 || \
+               PrtEvent.fHitArray.fPathInPrizm == 444", "same")
+c.Update()
+
+dataTree.SetLineColor(ROOT.kYellow - 3)
+dataTree.Draw("PrtEvent.fHitArray.fLeadTime", \
+              "!(PrtEvent.fHitArray.fPathInPrizm == 0 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 3 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 4 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 11 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 12 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 13 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 14 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 21 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 22 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 23 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 24 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 41 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 42 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 43 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 44 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 31 || PrtEvent.fHitArray.fPathInPrizm == 32 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 1 || PrtEvent.fHitArray.fPathInPrizm == 2 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 111 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 112 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 113 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 114 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 121 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 122 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 123 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 124 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 131 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 132 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 133 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 134 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 141 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 142 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 143 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 144 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 211 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 212 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 213 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 214 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 221 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 222 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 223 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 224 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 231 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 232 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 233 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 234 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 241 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 242 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 243 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 244 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 311 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 312 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 313 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 314 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 321 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 322 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 323 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 324 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 331 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 332 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 333 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 334 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 341 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 342 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 343 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 344 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 411 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 412 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 413 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 414 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 421 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 422 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 423 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 424 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 431 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 432 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 433 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 434 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 441 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 442 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 443 || \
+                 PrtEvent.fHitArray.fPathInPrizm == 444)", "same")
+c.Update()
+    
+c.Update()
+ROOT.gApplication.Run()
